@@ -1,0 +1,32 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.search {
+  margin-left: 40%;
+}
+
+.thead {
+  background-color: #009688;
+  color: aliceblue;
+}
+
+.thead a {
+  color: aliceblue;
+}
+
+.btn {
+  background-color: #009688;
+  color: aliceblue;
+}
+
+.btn:hover,
+thead a:hover {
+  color: rgb(255, 255, 91);
+}
+
+.delete:hover {
+  color: red;
+}

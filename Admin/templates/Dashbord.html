@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/b2c6d2915b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+    type="text/javascript"
+    src="https://www.gstatic.com/charts/loader.js"
+  ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+</head>
+<body>
+
+<section class="sidebar" style="width: 200px;">
+  
+    <div class="sidebar-header bg-primary">
+      <p class=" text-white fw-bold p-3">Admin</p>
+    </div>
+    <div class="profile">
+        <div class="image">
+            <img style="width: 100px" src="{% static 'image/png-transparent-computer-icons-management-admin-silhouette-black-and-white-neck.png' %}" alt="">
+        </div>
+        <ul class="text-left">  
+          <li><a href="{% url 'Dashboard' %}" id="dashboard">Dashboard</a><i class="fa fa-user text-white fs-4 ps-2"></i></li>
+          <li><a href="{% url 'Dashboard/patient'%}" id="patient">Patients</a><i class="fa fa-user text-white fs-4 ps-2"></i></li>
+          <li><a href="{% url 'Dashboard/admin' %}">Admin</a><i class="fa fa-user text-white fs-4 ps-2"></i></li>
+          <li><a href="{% url 'Dashboard/doctors' %}">Doctors</a> <i class="fa fa-capsules text-white fs-4 ps-2"></i></li>
+          <li><a href="{% url 'Dashboard/departments'%}">Department</a><i class="fa fa-building text-white fs-4 ps-2"></i></li>
+          <li><a href="{% url 'Dashboard/ticket' %}">Tickets</a><i class="fa fa-ticket text-white fs-4 ps-2"></i></li>
+          <li><a href="#" class="text-danger">Log Out</a><i class="fa fa-right-from-bracket"></i></li>
+          </ul>
+        </div>
+    </div>
+</section>
+<div class="navspan">
+    <span class="openicon" style="font-size: 25px; cursor: pointer"><i class="fa fa-sliders">
+    </i></span>
+</div>
+<div class="navspan1" style="display: none;">
+  <span class="openicon" style="font-size: 25px; cursor: pointer"><i class="fa fa-sliders">
+  </i></span>
+</div>
+<div class="main-head  d-flex justify-content-end shadow-sm p-3 mb-5 bg-light rounded ">
+  <div class=" head-content"><a href=""><i class="fa fa-user text-primary"></a></i></div>
+  <div class="head-content "><a href=""><i class="fa fa-dollar-sign text-success"></i></a></div> 
+  <div class="head-content"><a href=""><i class="fa fa-bell text-black"></i></a></div>
+</div>
+
+
+
+
+<section class="container" id="dash-content">
+  <div class="main-content container "> 
+      <div class="row justify-content-end">
+        <div class="box-content col-md-6 mt-3">
+          <a href="./admin.html" class="text-decoration-none">
+          <div class="box-color content shadow-sm  rounded  mb-2 p-4 text-white bg-gradient ">
+            <div class="d-flex justify-content-between">
+              <div class="content-head">Admins</div>
+              <div class="content-img">
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+            <div class="content-number">10</div>
+          </div>    
+        </a>  
+      </div>
+      <div class="box-content col-md-6 mt-3">
+        <a href="./patients.html" class=" text-decoration-none">
+          <div class="box-color content shadow-sm  rounded mb-2 p-4 text-white bg-gradient">
+            <div class="d-flex justify-content-between">
+              <div class="content-head">Patients</div>
+              <div class="content-img">
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+            <div class="content-number">10</div>
+          </div>    
+        </a>  
+      </div>
+      <div class="box-content col-md-6 mt-3">
+        <a href="./doctors.html" class="text-decoration-none">
+          <div class="box-color content shadow-sm  rounded mb-2 p-4 text-white bg-gradient">
+            <div class="d-flex justify-content-between">
+              <div class="content-head">Doctors</div>
+              <div class="content-img">
+                  <i class="fa fa-user-nurse"></i>
+              </div>
+            </div>
+            <div class="content-number">10</div>
+          </div> 
+        </a>     
+      </div>
+      <div class="box-content col-md-6 mt-3">
+        <a href="./departments.html" class="text-decoration-none">
+          <div class="box-color content shadow-sm  rounded mb-2 p-4 text-white  bg-gradient">
+            <div class="d-flex justify-content-between">
+              <div class="content-head">Departmets</div>
+              <div class="content-img">
+                <i class="fa fa-folder-open"></i>
+              </div>
+            </div>
+            <div class="content-number">10</div>
+          </div>      
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+<div class="draws row justify-content-center">
+  <div class="col-md-6" id="myChart" style="width: 100%; max-width: 600px; height: 500px"></div>
+</div>
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/file.js' %}"></script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>
+  </body>
+</html>
